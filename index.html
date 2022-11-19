@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="">
+      </div>
+<p id="result"></p>
+<input type="button" value="Reload Page" onClick="window.location.reload(true)">
+    </div>
+
+<script>
+ imageArray=["dice1.png","dice2.png","dice3.png","dice4.png","dice5.png","dice6.png"]
+ randomPlayer1=imageArray[Math.floor(Math.random()*imageArray.length)]
+ console.log(randomPlayer1)
+ randomPlayer2=imageArray[Math.floor(Math.random()*imageArray.length)]
+ console.log(randomPlayer2)
+ document.getElementsByClassName("img1")[0].setAttribute("src",randomPlayer1)
+document.getElementsByClassName("img2")[0].setAttribute("src",randomPlayer2)
+
+if(randomPlayer1==randomPlayer2){
+  result=document.getElementById("result").innerHTML="👀 Draw match please refresh again👍👍"
+}
+
+if(randomPlayer1>randomPlayer2){
+  result=document.getElementById("result").innerHTML="Congratulations👏🎉 player 1 is win 🥳"
+}
+
+if(randomPlayer1<randomPlayer2){
+  result=document.getElementById("result").innerHTML="Congratulations👏🎉 player 2 is win 🥳"
+}
+</script>
+  </body>
+
+  <footer>
+😎KAUSHAL KUMAR SINGH😎
+  </footer>
+</html>
